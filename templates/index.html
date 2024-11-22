@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Score Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Student Exam Score Prediction</h1>
+        <form action="/predict" method="POST" class="p-4 shadow bg-light rounded">
+            <!-- Hours Studied -->
+            <div class="form-group">
+                <label for="Hours_Studied">Hours Studied</label>
+                <input type="number" name="Hours_Studied" id="Hours_Studied" class="form-control" required>
+            </div>
+            
+            <!-- Attendance -->
+            <div class="form-group">
+                <label for="Attendance">Attendance (%)</label>
+                <input type="number" name="Attendance" id="Attendance" class="form-control" required>
+            </div>
+
+            <!-- Parental Involvement -->
+            <div class="form-group">
+                <label for="Parental_Involvement">Parental Involvement</label>
+                <select name="Parental_Involvement" id="Parental_Involvement" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <!-- Access to Resources -->
+            <div class="form-group">
+                <label for="Access_to_Resources">Access to Resources</label>
+                <select name="Access_to_Resources" id="Access_to_Resources" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <!-- Extracurricular Activities -->
+            <div class="form-group">
+                <label for="Extracurricular_Activities">Extracurricular Activities</label>
+                <select name="Extracurricular_Activities" id="Extracurricular_Activities" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <!-- Sleep Hours -->
+            <div class="form-group">
+                <label for="Sleep_Hours">Sleep Hours</label>
+                <input type="number" name="Sleep_Hours" id="Sleep_Hours" class="form-control" required>
+            </div>
+
+            <!-- Previous Scores -->
+            <div class="form-group">
+                <label for="Previous_Scores">Previous Scores</label>
+                <input type="number" name="Previous_Scores" id="Previous_Scores" class="form-control" required>
+            </div>
+
+            <!-- Motivation Level -->
+            <div class="form-group">
+                <label for="Motivation_Level">Motivation Level</label>
+                <select name="Motivation_Level" id="Motivation_Level" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <!-- Internet Access -->
+            <div class="form-group">
+                <label for="Internet_Access">Internet Access</label>
+                <select name="Internet_Access" id="Internet_Access" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <!-- Tutoring Sessions -->
+            <div class="form-group">
+                <label for="Tutoring_Sessions">Tutoring Sessions</label>
+                <input type="number" name="Tutoring_Sessions" id="Tutoring_Sessions" class="form-control" required>
+            </div>
+
+            <!-- Family Income -->
+            <div class="form-group">
+                <label for="Family_Income">Family Income</label>
+                <select name="Family_Income" id="Family_Income" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <!-- Teacher Quality -->
+            <div class="form-group">
+                <label for="Teacher_Quality">Teacher Quality</label>
+                <select name="Teacher_Quality" id="Teacher_Quality" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <!-- School Type -->
+            <div class="form-group">
+                <label for="School_Type">School Type</label>
+                <select name="School_Type" id="School_Type" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Public</option>
+                    <option>Private</option>
+                </select>
+            </div>
+
+            <!-- Peer Influence -->
+            <div class="form-group">
+                <label for="Peer_Influence">Peer Influence</label>
+                <select name="Peer_Influence" id="Peer_Influence" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Negative</option>
+                    <option>Neutral</option>
+                    <option>Positive</option>
+                </select>
+            </div>
+
+            <!-- Physical Activity -->
+            <div class="form-group">
+                <label for="Physical_Activity">Physical Activity</label>
+                <input type="number" name="Physical_Activity" id="Physical_Activity" class="form-control" required>
+            </div>
+
+            <!-- Learning Disabilities -->
+            <div class="form-group">
+                <label for="Learning_Disabilities">Learning Disabilities</label>
+                <select name="Learning_Disabilities" id="Learning_Disabilities" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <!-- Parental Education Level -->
+            <div class="form-group">
+                <label for="Parental_Education_Level">Parental Education Level</label>
+                <select name="Parental_Education_Level" id="Parental_Education_Level" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>High School</option>
+                    <option>College</option>
+                    <option>Postgraduate</option>
+                </select>
+            </div>
+
+            <!-- Distance from Home -->
+            <div class="form-group">
+                <label for="Distance_from_Home">Distance from Home</label>
+                <select name="Distance_from_Home" id="Distance_from_Home" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Near</option>
+                    <option>Moderate</option>
+                    <option>Far</option>
+                </select>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select name="Gender" id="Gender" class="form-control" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+
+        <div class="mt-4">
+            <h3 class="text-center" id="prediction">{{ prediction_text }}</h3>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
